@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О проекте — SOLAR.OBSERVATORY</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+
+    <div class="page-wrapper">
+        <header class="site-header">
+            <div class="logo">SOLAR.OBSERVATORY</div>
+            <nav class="main-nav">
+                <a href="index.html">главная</a>
+                <a href="catalog.html">каталог планет</a>
+                <a href="about.html" class="active">о проекте</a>
+                <a href="contact.html" class="live-btn">LIVE <span class="live-icon"></span></a>
+            </nav>
+        </header>
+
+        <main class="about-content">
+            <div class="about-header">
+                <h2>О проекте</h2>
+                <p class="about-descr">
+                    <strong>SOLAR.OBSERVATORY</strong> — это глобальная научно-образовательная инициатива, созданная на стыке фундаментальной астрофизики и передовых технологий интерактивной визуализации. Наша миссия — стереть границу между академической наукой и широкой аудиторией, предоставив каждому энтузиасту космоса прямой доступ к исследовательской инфраструктуре.
+                </p>
+                <p class="about-descr">
+                    Мы непрерывно обрабатываем потоки данных, поступающие от крупнейших мировых радиотелескопов и орбитальных зондов. На основе этих массивов алгоритмы генерируют высокоточные трехмерные симуляции физических процессов, протекающих в Солнечной системе. Виртуальная лаборатория позволяет изучать тектонику Марса, штормовую активность Юпитера и динамику ледяных колец Сатурна с беспрецедентной детализацией.
+                </p>
+                <p class="about-descr">
+                    Проект функционирует как открытая экосистема. Студенты, исследователи и любители астрономии могут бесплатно использовать наши инструменты для моделирования гравитационных взаимодействий, анализа спектрографических карт и ведения самостоятельных наблюдений за звездным небом.
+                </p>
+            </div>
+            
+            <!-- Карточки стали компактными квадратами за счет ограничения максимальной ширины в разметке -->
+            <div class="about-grid container-compact">
+                <!-- Карточка 1 -->
+                <div class="about-card card-square">
+                    <div class="card-inner-text">
+                        <span class="highlight-num">100%</span>
+                        <p>Реальные данные</p>
+                    </div>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div class="about-card card-square img-card">
+                    <img src="satellite.jpg" alt="Спутник" class="satellite-img">
+                </div>
+
+                <!-- Карточка 3 -->
+                <div class="about-card card-square">
+                    <div class="card-inner-text">
+                        <span class="highlight-num">24/7</span>
+                        <div class="live-status-block">
+                            <svg class="wifi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.59 16.11a6 6 0 0 1 6.82 0M12 20h.01"/>
+                            </svg>
+                            <span>LIVE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-sun-block">
+                <div class="sun-sphere-sm"></div>
+                <div class="footer-sun-text">
+                    <p class="footer-title">Свяжитесь с нами</p>
+                    <a href="mailto:info@solarobservatory.space" class="footer-email-left">info@solarobservatory.space</a>
+                </div>
+            </div>
+
+            <div class="footer-socials">
+                <a href="#" class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </a>
+                <a href="mailto:info@solarobservatory.space" class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"/>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

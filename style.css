@@ -1,0 +1,657 @@
+/* ==========================================================================
+   1. ОБНУЛЕНИЕ СТИЛЕЙ И БАЗОВЫЕ НАСТРОЙКИ (ЕДИНЫЙ ШРИФТ)
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #050608;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('1.jpg') no-repeat center bottom/cover;
+    z-index: -1;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   2. ШАПКА САЙТА (ПЛАВНЫЙ ПЕРЕХОД ЧЕРНОГО В ПРОЗРАЧНЫЙ)
+   ========================================================================== */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px 8% 60px 8%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0) 100%);
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 4px 10px rgba(0,0,0,0.9);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.main-nav a {
+    color: #ffffff;
+    opacity: 0.8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    position: relative;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 2px 5px rgba(0,0,0,0.9);
+}
+
+.main-nav a:hover, .main-nav a.active {
+    opacity: 1;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.main-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f7d117;
+    box-shadow: 0 0 10px #f7d117, 0 0 20px rgba(247, 209, 23, 0.6);
+}
+
+.live-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.live-icon {
+    display: inline-block;
+    width: 15px;
+    height: 11px;
+    background: #ffffff;
+    border-radius: 1px;
+    position: relative;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.live-icon::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: 2px;
+    border-top: 3.5px solid transparent;
+    border-bottom: 3.5px solid transparent;
+    border-left: 5px solid #ffffff;
+}
+
+/* ==========================================================================
+   3. ГЛАВНЫЙ КОНТЕНТ (ОБЩИЕ НАСТРОЙКИ СЕТОК)
+   ========================================================================== */
+.main-content, .catalog-content, .about-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 8% 40px 8%;
+    gap: 30px;
+}
+
+/* Солнце в боковой панели (Главная страница) */
+.info-sidebar {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 15px;
+    align-self: flex-start;
+}
+
+.sun-sphere {
+    width: 75px;
+    height: 75px;
+    background: radial-gradient(circle at 35% 35%, #ffffff 0%, #fff8bc 25%, #f7d117 65%, #b29100 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 25px 10px rgba(247, 209, 23, 0.5), 0 0 60px 25px rgba(247, 209, 23, 0.2), 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.sidebar-text {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 2px 6px rgba(0,0,0,0.9);
+}
+
+.accent-text {
+    color: #f7d117;
+    font-weight: 600;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 10px rgba(247, 209, 23, 0.4);
+}
+
+/* ==========================================================================
+   4. ТЕКСТА И КНОПКИ ГЛАВНОЙ СТРАНИЦЫ
+   ========================================================================== */
+.hero-center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto 0;
+}
+
+.hero-center h1, .catalog-header h2, .about-header h2 {
+    font-size: 3.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1.45;
+    margin-bottom: 25px;
+    color: #ffffff;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 6px 15px rgba(0, 0, 0, 0.95), 0 15px 40px rgba(0, 0, 0, 0.8);
+}
+
+.hero-center h1 em {
+    font-style: normal;
+    font-weight: 600;
+    color: #f7d117;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 20px rgba(247, 209, 23, 0.6), 0 6px 15px rgba(0, 0, 0, 0.95);
+}
+
+.hero-description, .catalog-header p, .about-descr {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #f2f2f2;
+    max-width: 680px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 3px 10px rgba(0, 0, 0, 0.95);
+}
+
+.button-wrapper {
+    margin-bottom: 50px;
+}
+
+.btn-yellow {
+    display: inline-block;
+    background-color: #f7d117;
+    color: #000000;
+    padding: 18px 45px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 2px solid #f7d117;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 15px 35px rgba(247, 209, 23, 0.25);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn-yellow:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #f7d117;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 20px 45px rgba(247, 209, 23, 0.6);
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    border-top: 2px solid rgba(255, 255, 255, 0.15);
+    padding-top: 35px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-num {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 5px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 4px 10px rgba(0,0,0,0.8);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #b3b3b3;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* ==========================================================================
+   5. ПОДВАЛ САЙТА (ПЛАВНЫЙ ПЕРЕХОД ПРОЗРАЧНОГО В ЧЕРНЫЙ)
+   ========================================================================== */
+.site-footer {
+    padding: 60px 8% 40px 8%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-telemetry {
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+.status-online {
+    color: #00ff66;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.6), -1px -1px 0 #000, 1px 1px 0 #000;
+}
+
+.footer-contacts {
+    text-align: right;
+}
+
+.footer-title {
+    font-size: 0.75rem;
+    color: #ffffff;
+    margin-bottom: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer-email {
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 2px 4px rgba(0,0,0,0.8);
+}
+/* ==========================================================================
+   6. КАТАЛОГ ПЛАНЕТ (ПРОЗРАЧНЫЙ ЦЕНТР И ИСПРАВЛЕННЫЕ КАРТОЧКИ)
+   ========================================================================== */
+.planets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+    gap: 30px !important;
+    width: 100%;
+}
+
+.planet-card {
+    /* Прозрачный центр: в середине полная прозрачность, к краям плавное затемнение */
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(13, 13, 17, 0.9) 80%, rgba(20, 20, 25, 0.98) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important; 
+    border-radius: 32px !important; 
+    padding: 30px 20px !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.85), inset 0 1px 2px rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+/* Интерактивный эффект приподнимания и увеличения при наведении мыши */
+.planet-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 45px 85px rgba(0, 0, 0, 0.95) !important;
+}
+
+.planet-avatar {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.planet-card h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.planet-card p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    min-height: 110px !important; 
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* Маленькие овальные кнопки «Подробнее» */
+.btn-yellow-sm {
+    display: inline-block;
+    background-color: #f7d117;
+    color: #000000;
+    padding: 12px 45px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 2px solid #f7d117;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 10px 25px rgba(247, 209, 23, 0.2);
+    transition: all 0.3s ease;
+    margin-top: auto; 
+}
+
+.btn-yellow-sm:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #f7d117;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 15px 30px rgba(247, 209, 23, 0.4);
+}
+
+/* Подвал с уменьшенным солнцем слева */
+.footer-sun-block {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+}
+
+.sun-sphere-sm {
+    width: 55px;
+    height: 55px;
+    background: radial-gradient(circle at 35% 35%, #ffffff 0%, #fff8bc 25%, #f7d117 65%, #b29100 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px 8px rgba(247, 209, 23, 0.5), 0 0 45px 15px rgba(247, 209, 23, 0.2);
+}
+
+.footer-sun-text {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #ffffff;
+    font-weight: 400;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.footer-email-left {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: #ffffff;
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   7. СТРАНИЦА О ПРОЕКТЕ (ЖУРНАЛЬНЫЕ КВАДРАТНЫЕ КАРТОЧКИ)
+   ========================================================================== */
+.about-descr {
+    max-width: 900px;
+}
+
+/* Компактный центрированный ряд для карточек «О проекте» */
+.container-compact {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 40px !important;
+    width: 100%;
+    max-width: 900px !important;
+    margin: 0 auto 30px auto !important;
+}
+
+/* Идеальные квадратные пропорции */
+.card-square {
+    flex: 1;
+    min-width: 220px !important;
+    max-width: 240px !important; 
+    height: 220px !important;    
+    padding: 25px !important;
+    border-radius: 24px !important;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(13, 13, 17, 0.9) 80%, rgba(20, 20, 25, 0.98) 100%) !important;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.card-square:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.85) !important;
+}
+
+.img-card {
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+.satellite-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 24px !important;
+}
+
+.card-inner-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.highlight-num {
+    font-size: 2.8rem !important;
+}
+
+.live-status-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.1rem !important;
+}
+
+.wifi-icon {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+/* Ряд иконок соцсетей */
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.social-icon {
+    color: #ffffff;
+    opacity: 0.7;
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.social-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.social-icon:hover {
+    opacity: 1;
+    color: #f7d117;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   8. МОДАЛЬНЫЕ ОКНА ПЛАНЕТ (ФИКСИРОВАННЫЙ СЛОЙ)
+   ========================================================================== */
+.modal-overlay {
+    position: fixed !important; 
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 99999 !important; 
+    
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.modal-overlay:target {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    visibility: visible !important;
+}
+
+.modal-window {
+    background: linear-gradient(135deg, rgba(25, 25, 30, 0.95) 0%, rgba(15, 15, 20, 0.98) 100%) !important;
+    border: 1px solid rgba(247, 209, 23, 0.3) !important;
+    padding: 40px !important;
+    max-width: 500px !important;
+    width: 90% !important;
+    border-radius: 20px !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(247, 209, 23, 0.1) !important;
+    text-align: left !important;
+    transform: translateY(-30px);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.modal-overlay:target .modal-window {
+    transform: translateY(0) !important;
+}
+
+.modal-window h3 {
+    font-size: 1.8rem !important;
+    color: #f7d117 !important;
+    margin-bottom: 20px !important;
+}
+
+.modal-window p {
+    font-size: 0.95rem !important;
+    line-height: 1.8 !important;
+    color: #ffffff !important;
+    margin-bottom: 15px !important;
+    min-height: auto !important; 
+    text-shadow: none !important;
+}
+
+.modal-descr {
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding-top: 15px !important;
+    color: #cccccc !important;
+}
+
+.btn-yellow-close {
+    display: block !important;
+    background-color: #f7d117 !important;
+    color: #000000 !important;
+    padding: 14px 0 !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    border: 2px solid #f7d117 !important;
+    margin-top: 25px !important;
+    width: 100% !important;
+}
+
+/* ==========================================================================
+   9. АДАПТИВНОСТЬ ПОД МОБИЛЬНЫЕ УСТРОЙСТВА
+   ========================================================================== */
+@media (max-width: 768px) {
+    .site-header, .site-footer {
+        flex-direction: column;
+        gap: 20px;
+        padding: 25px 20px;
+        background: #000000 !important;
+    }
+    .main-nav, .footer-socials {
+        gap: 20px;
+    }
+    .hero-center h1 {
+        font-size: 2.1rem;
+    }
+    .container-compact {
+        flex-direction: column !important;
+        gap: 25px !important;
+    }
+    .card-square {
+        max-width: 280px !important;
+        height: 200px !important;
+    }
+    .footer-telemetry, .footer-contacts, .footer-sun-block {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* ==========================================================================
+   12. ТРИГГЕР ДЛЯ ОТКРЫТИЯ МОДАЛЬНЫХ ОКНО ПО КЛИКУ (ОБЯЗАТЕЛЬНО К КУДА)
+   ========================================================================== */
+
+/* Когда в ссылке появляется ID окна, включаем его видимость на 100% */
+.modal-overlay:target {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    visibility: visible !important;
+}
+
+/* Делаем так, чтобы само текстовое окошко плавно вставало по центру */
+.modal-overlay:target .modal-window {
+    transform: translateY(0) !important;
+}
+/* ==========================================================================
+   13. ВЫРАВНИВАНИЕ ТЕКСТА ПО ЦЕНТРУ КАРТОЧЕК «О ПРОЕКТЕ»
+   ========================================================================== */
+.card-inner-text {
+    height: 100%; /* Растягиваем текстовый блок на всю высоту карточки */
+    justify-content: center !important; /* Центрируем содержимое строго по вертикали */
+}

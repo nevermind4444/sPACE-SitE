@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLAR.OBSERVATORY</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Фоновое изображение фиксировано сзади -->
+    <div class="background-overlay"></div>
+
+    <div class="page-wrapper">
+        <header class="site-header">
+            <div class="logo">SOLAR.OBSERVATORY</div>
+            <nav class="main-nav">
+                <a href="index.html" class="active">главная</a>
+                <a href="catalog.html">каталог планет</a>
+                <a href="about.html">о проекте</a>
+                <a href="contact.html" class="live-btn">LIVE <span class="live-icon"></span></a>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <div class="info-sidebar">
+                <div class="sun-sphere"></div>
+                <div class="sidebar-text">
+                    <p>Космическая обсерватория</p>
+                    <p>Виртуальный телескоп</p>
+                    <p class="accent-text">Исследователь солнечной системы</p>
+                </div>
+            </div>
+
+            <div class="hero-center">
+                <h1>Исследуйте планеты <br>через <em>виртуальную обсерваторию</em></h1>
+                
+                <p class="hero-description">Получите прямой доступ к массивам данных радиотелескопов, детализированным 3D-моделям небесных тел и снимкам глубокого космоса в реальном времени.</p>
+                
+                <div class="button-wrapper">
+                    <a href="catalog.html" class="btn-yellow">Открыть каталог планет</a>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span class="stat-num">8.4м</span>
+                        <span class="stat-label">Диаметр зеркала</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">4,200+</span>
+                        <span class="stat-label">Экзопланет в базе</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">0.02"</span>
+                        <span class="stat-label">Угловое разрешение</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-telemetry">
+                <p>SYSTEM STATUS: <span class="status-online">ONLINE</span></p>
+                <p>LAT: 23°01'22" S | LONG: 67°45'17" W | ALT: 5050m</p>
+            </div>
+
+            <div class="footer-contacts">
+                <p class="footer-title">Свяжитесь с нами</p>
+                <a href="mailto:info@solarobservatory.space" class="footer-email">info@solarobservatory.space</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

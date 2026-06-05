@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог планет — SOLAR.OBSERVATORY</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+
+    <div class="page-wrapper">
+        <!-- Шапка с градиентом -->
+        <header class="site-header">
+            <div class="logo">SOLAR.OBSERVATORY</div>
+            <nav class="main-nav">
+                <a href="index.html">главная</a>
+                <a href="catalog.html" class="active">каталог планет</a>
+                <a href="about.html">о проекте</a>
+                <a href="contact.html" class="live-btn">LIVE <span class="live-icon"></span></a>
+            </nav>
+        </header>
+
+        <!-- Основной контент каталога -->
+        <main class="catalog-content">
+            <div class="catalog-header">
+                <h2>Каталог планет</h2>
+                <p>База данных верифицированных объектов Солнечной системы. Нажмите на карточку любого небесного тела, чтобы запустить симуляцию орбиты, получить актуальные спектрографические карты, температурные индексы и изучить физические характеристики ядра.</p>
+            </div>
+            
+            <div class="planets-grid">
+                <!-- 1. Меркурий -->
+                <div class="planet-card">
+                    <img class="planet-avatar" src="mercury.svg" alt="Меркурий">
+                    <h3>Меркурий</h3>
+                    <p>Ближайшая к Солнцу планета. Железное ядро составляет 85% её радиуса. Из-за отсутствия плотной атмосферы поверхность испещрена миллионами кратеров и испытывает экстремальные температурные перепады.</p>
+                    <a href="#info-mercury" class="btn-yellow-sm">Подробнее</a>
+                </div>
+
+                <!-- 2. Венера -->
+                <div class="planet-card">
+                    <img class="planet-avatar" src="venus.svg" alt="Венера">
+                    <h3>Венера</h3>
+                    <p>Экстремальный двойник Земли. Окутана сверхплотной атмосферой из углекислого газа с облаками из серной кислоты. Сильнейший парниковый эффект разогревает поверхность до температур, плавящих свинец.</p>
+                    <a href="#info-venus" class="btn-yellow-sm">Подробнее</a>
+                </div>
+
+                <!-- 3. Земля -->
+                <div class="planet-card">
+                    <img class="planet-avatar" src="earth.svg" alt="Земля">
+                    <h3>Земля</h3>
+                    <p>Уникальная колыбель биосферы. Обладает идеальным гидросферным балансом, мощной азотно-кислородной атмосферой и тектонической активностью, непрерывно обновляющей минеральный состав коры.</p>
+                    <a href="#info-earth" class="btn-yellow-sm">Подробнее</a>
+                </div>
+
+                <!-- 4. Марс -->
+                <div class="planet-card">
+                    <img class="planet-avatar" src="mars.svg" alt="Марс">
+                    <h3>Марс</h3>
+                    <p>Перспективный объект колонизации. Пустынный мир с разреженной атмосферой и оксидом железа в грунте. Хранит колоссальные запасы замерзшей воды в глубоких полярных шапках и под реолитом.</p>
+                    <a href="#info-mars" class="btn-yellow-sm">Подробнее</a>
+                </div>
+
+                <!-- 5. Юпитер -->
+                <div class="planet-card">
+                    <img class="planet-avatar" src="jupiter.svg" alt="Юпитер">
+                    <h3>Юпитер</h3>
+                    <p>Доминантный газовый гигант. Обладает мощнейшим магнитным полем и удерживает вокруг себя грандиозную систему из 95 спутников. Атмосфера состоит из водорода со штормами размером с Землю.</p>
+                    <a href="#info-jupiter" class="btn-yellow-sm">Подробнее</a>
+                </div>
+
+                <!-- 6. Сатурн -->
+                <div class="planet-card">
+                    <img class="planet-avatar" src="saturn.svg" alt="Сатурн">
+                    <h3>Сатурн</h3>
+                    <p>Икона астрономии. Планета с рекордно низкой плотностью, способная плавать в воде. Кольца представляют собой сложнейшую структуру из миллиардов ледяных глыб, обломков комет и пыли.</p>
+                    <a href="#info-saturn" class="btn-yellow-sm">Подробнее</a>
+                </div>
+
+                <!-- 7. Уран -->
+                <div class="planet-card">
+                    <img class="planet-avatar" src="uranus.svg" alt="Уран">
+                    <h3>Уран</h3>
+                    <p>Аномальный ледяной гигант. Имеет уникальное боковое вращение с наклоном оси в 98 градусов, вероятно вызванное столкновением с крупным протопланетным телом на заре формирования системы.</p>
+                    <a href="#info-uranus" class="btn-yellow-sm">Подробнее</a>
+                </div>
+
+                <!-- 8. Нептун -->
+                <div class="planet-card">
+                    <img class="planet-avatar" src="neptune.svg" alt="Нептун">
+                    <h3>Нептун</h3>
+                    <p>Самый удаленный и загадочный мир. Сверххолодный ледяной гигант, в верхних слоях которого бушуют самые яростные сверхзвуковые ветра в Солнечной системе, достигающие скорости 2100 км/ч.</p>
+                    <a href="#info-neptune" class="btn-yellow-sm">Подробнее</a>
+                </div>
+            </div>
+        </main>
+
+        <!-- ==========================================================================
+           БЛОК ВСПЛЫВАЮЩИХ ОКНО С ДОП ИНФОЙ ДЛЯ КАЖДОЙ ПЛАНЕТЫ (ИСПРАВЛЕННЫЕ ID)
+           ========================================================================== */ -->
+        
+        <!-- Окно 1: Меркурий -->
+        <div class="modal-overlay" id="info-mercury">
+            <div class="modal-window">
+                <h3>Меркурий: Досье</h3>
+                <p><strong>Тип объекта:</strong> Планета земной группы<br><strong>Расстояние от Солнца:</strong> 57.9 млн км<br><strong>Орбитальный период:</strong> 88 земных суток</p>
+                <p class="modal-descr">Самая маленькая планета системы. У Меркурия практически нет атмосферы, из-за чего его поверхность испещрена кратерами и не защищена от космической радиации.</p>
+                <a href="catalog.html" class="btn-yellow-close">Закрыть</a>
+            </div>
+        </div>
+
+        <!-- Окно 2: Венера -->
+        <div class="modal-overlay" id="info-venus">
+            <div class="modal-window">
+                <h3>Венера: Досье</h3>
+                <p><strong>Тип объекта:</strong> Планета земной группы<br><strong>Расстояние от Солнца:</strong> 108.2 млн км<br><strong>Орбитальный период:</strong> 224.7 земных суток</p>
+                <p class="modal-descr">Атмосфера Венеры состоит из углекислого газа, а облака — из серной кислоты. Сильнейший парниковый эффект делает её самой горячей планетой в системе (+460 °C).</p>
+                <a href="catalog.html" class="btn-yellow-close">Закрыть</a>
+            </div>
+        </div>
+
+        <!-- Окно 3: Земля -->
+        <div class="modal-overlay" id="info-earth">
+            <div class="modal-window">
+                <h3>Земля: Досье</h3>
+                <p><strong>Тип объекта:</strong> Планета земной группы<br><strong>Расстояние от Солнца:</strong> 149.6 млн км<br><strong>Орбитальный период:</strong> 365.25 суток</p>
+                <p class="modal-descr">Единственное известное человечеству тело во Вселенной, населённое живыми организмами. Имеет идеальные условия, гидросферу из жидкой воды и стабильный климат.</p>
+                <a href="catalog.html" class="btn-yellow-close">Закрыть</a>
+            </div>
+        </div>
+
+        <!-- Окно 4: Марс -->
+        <div class="modal-overlay" id="info-mars">
+            <div class="modal-window">
+                <h3>Марс: Досье</h3>
+                <p><strong>Тип объекта:</strong> Планета земной группы<br><strong>Расстояние от Солнца:</strong> 227.9 млн км<br><strong>Орбитальный период:</strong> 687 земных суток</p>
+                <p class="modal-descr">Красная планета обладает разреженной атмосферой и полярными шапками из водяного льда. Здесь расположен Олимп — крупнейший потухший вулкан в Солнечной системе.</p>
+                <a href="catalog.html" class="btn-yellow-close">Закрыть</a>
+            </div>
+        </div>
+
+        <!-- Окно 5: Юпитер -->
+        <div class="modal-overlay" id="info-jupiter">
+            <div class="modal-window">
+                <h3>Юпитер: Досье</h3>
+                <p><strong>Тип объекта:</strong> Газовый гигант<br><strong>Расстояние от Солнца:</strong> 778.5 млн км<br><strong>Орбитальный период:</strong> 11.86 земных лет</p>
+                <p class="modal-descr">Крупнейшая планета системы. Юпитер знаменит своими полосами облаков и Большим Красным Пятном — гигантским вихрем-штормом, который непрерывно наблюдают уже три века.</p>
+                <a href="catalog.html" class="btn-yellow-close">Закрыть</a>
+            </div>
+        </div>
+
+        <!-- Окно 6: Сатурн -->
+        <div class="modal-overlay" id="info-saturn">
+            <div class="modal-window">
+                <h3>Сатурн: Досье</h3>
+                                <p><strong>Тип объекта:</strong> Газовый гигант<br><strong>Расстояние от Солнца:</strong> 1.43 млрд км<br><strong>Орбитальный период:</strong> 29.46 земных лет</p>
+                <p class="modal-descr">Обладает самой выразительной и яркой системой плоских колец, состоящих из чистейшего водяного льда, каменных обломков и космической пыли разного калибра.</p>
+                <a href="catalog.html" class="btn-yellow-close">Закрыть</a>
+            </div>
+        </div>
+
+        <!-- Окно 7: Уран -->
+        <div class="modal-overlay" id="info-uranus">
+            <div class="modal-window">
+                <h3>Уран: Досье</h3>
+                <p><strong>Тип объекта:</strong> Ледяной гигант<br><strong>Расстояние от Солнца:</strong> 2.87 млрд км<br><strong>Орбитальный период:</strong> 84 земных года</p>
+                <p class="modal-descr">Уникальная планета, которая вращается вокруг Солнца, «лежа на боку». Атмосфера Урана — самая холодная среди всех планет, её температура опускается до -224 °C.</p>
+                <a href="catalog.html" class="btn-yellow-close">Закрыть</a>
+            </div>
+        </div>
+
+        <!-- Окно 8: Нептун -->
+        <div class="modal-overlay" id="info-neptune">
+            <div class="modal-window">
+                <h3>Нептун: Досье</h3>
+                <p><strong>Тип объекта:</strong> Ледяной гигант<br><strong>Расстояние от Солнца:</strong> 4.50 млрд км<br><strong>Орбитальный период:</strong> 164.8 земных лет</p>
+                <p class="modal-descr">Самый дальний мир Солнечной системы. На Нептуне дуют экстремальные сверхзвуковые ветра, а его глубокий синий цвет обусловлен наличием метана в атмосфере.</p>
+                <a href="catalog.html" class="btn-yellow-close">Закрыть</a>
+            </div>
+        </div>
+
+        <!-- Подвал -->
+        <footer class="site-footer">
+            <div class="footer-sun-block">
+                <div class="sun-sphere-sm"></div>
+                <div class="footer-sun-text">
+                    <p>Исследуйте. Наблюдайте.</p>
+                    <p>Познавайте.</p>
+                    <a href="mailto:info@solarobservatory.space" class="footer-email-left">info@solarobservatory.space</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+

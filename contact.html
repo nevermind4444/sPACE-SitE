@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIVE Трансляция — SOLAR.OBSERVATORY</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+
+    <div class="page-wrapper">
+        <!-- Шапка с градиентом -->
+        <header class="site-header">
+            <div class="logo">SOLAR.OBSERVATORY</div>
+            <nav class="main-nav">
+                <a href="index.html">главная</a>
+                <a href="catalog.html">каталог планет</a>
+                <a href="about.html">о проекте</a>
+                <a href="contact.html" class="live-btn active">LIVE <span class="live-icon"></span></a>
+            </nav>
+        </header>
+
+        <!-- Основной контент страницы LIVE -->
+        <main class="about-content">
+            <div class="catalog-header">
+                <h2>Прямая трансляция</h2>
+                <p>Центр связи с виртуальной лабораторией. Отправьте закодированный запрос на калибровку линз оптических систем или отправьте отчет об обнаружении аномалий в глубоком космосе.</p>
+            </div>
+            
+            <!-- Ряд с формой и описанием -->
+            <div class="container-compact">
+                <div class="about-card card-square" style="max-width: 100% !important; height: auto !important; width: 100%;">
+                    <div class="card-inner-text" style="align-items: stretch; width: 100%;">
+                        <div class="live-status-block" style="justify-content: center; margin-bottom: 10px;">
+                            <svg class="wifi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.59 16.11a6 6 0 0 1 6.82 0M12 20h.01"/>
+                            </svg>
+                            <span class="status-online">ПЕРЕДАТЧИК ГОТОВ</span>
+                        </div>
+                        <!-- Форма отправки сигнала на сервер без JS -->
+                        <form class="space-form" action="contact.html#success" method="GET" style="display: flex; flex-direction: column; gap: 20px; width: 100%; margin-top: 15px;">
+                            <input type="text" name="name" placeholder="Ваше имя / Идентификатор" required style="background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); padding: 14px; color: #fff; border-radius: 4px; font-family: inherit;">
+                            <input type="email" name="email" placeholder="Электронный адрес связи (Email)" required style="background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); padding: 14px; color: #fff; border-radius: 4px; font-family: inherit;">
+                            <textarea name="message" rows="4" placeholder="Текст сообщения или координаты аномалии..." required style="background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); padding: 14px; color: #fff; border-radius: 4px; font-family: inherit; resize: none;"></textarea>
+                            <button type="submit" class="btn-yellow" style="align-self: center; cursor: pointer; border: none;">Отправить сигнал</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Всплывающее окно успешной отправки без использования JS -->
+        <div class="modal-overlay" id="success">
+            <div class="modal-window">
+                <h3>Сигнал передан</h3>
+                <p>Ваше сообщение успешно закодировано и отправлено на главные сервера обработки данных обсерватории. 🛰️</p>
+                <a href="contact.html" class="btn-yellow-close" style="text-decoration: none;">Закрыть канал</a>
+            </div>
+        </div>
+
+        <!-- Подвал с солнцем слева и иконками соцсетей справа -->
+        <footer class="site-footer">
+            <div class="footer-sun-block">
+                <div class="sun-sphere-sm"></div>
+                <div class="footer-sun-text">
+                    <p class="footer-title">Свяжитесь с нами</p>
+                    <a href="mailto:info@solarobservatory.space" class="footer-email-left">info@solarobservatory.space</a>
+                </div>
+            </div>
+
+            <!-- Ряд социальных иконок -->
+            <div class="footer-socials">
+                <a href="#" class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </a>
+                <a href="mailto:info@solarobservatory.space" class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"/>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
